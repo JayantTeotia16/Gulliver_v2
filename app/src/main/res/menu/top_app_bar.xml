@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_fav"
+        app:showAsAction="ifRoom"
+        android:title="@string/fav" />
+    <item
+        android:id="@+id/more1"
+        android:title="@string/profile"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more2"
+        android:title="@string/your_trip"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more3"
+        android:title="@string/bookings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more4"
+        android:title="@string/comp_trips"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more5"
+        android:title="@string/fav"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more6"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+</menu>

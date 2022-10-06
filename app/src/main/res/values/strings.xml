@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Gulliver_v2</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">Destination</string>
+    <string name="search">Go Flying</string>
+    <string name="affirmation1">Goa</string>
+    <string name="affirmation2">Gokarna</string>
+    <string name="affirmation3">Manali</string>
+    <string name="affirmation4">Kasol</string>
+    <string name="affirmation5">Wayanad</string>
+    <string name="affirmation6">Coorg</string>
+    <string name="affirmation7">Rishikesh</string>
+    <string name="affirmation8">Kashmir</string>
+    <string name="affirmation9">Laddakh</string>
+    <string name="affirmation10">Chandigarh</string>
+    <string name="service1">International \n Travel</string>
+    <string name="service2">Tour and \n Services</string>
+    <string name="service3">Events \n Near You</string>
+    <string name="gmap">This is Google Map API Screen</string>
+    <string name="buttonclick">This is button click screen</string>
+    <string name="backbutton">Back</string>
+    <string name="page_title">Gulliver</string>
+    <string name="profile">Profile</string>
+    <string name="your_trip">Your Trips</string>
+    <string name="bookings">Bookings</string>
+    <string name="comp_trips">Completed Trips</string>
+    <string name="fav">Favourites</string>
+    <string name="settings">Settings</string>
+    <string name="places">Places</string>
+    <string name="vehicle">Vehicle</string>
+    <string name="hotel">Hotel</string>
+    <string name="chat">Chat</string>
+</resources>
