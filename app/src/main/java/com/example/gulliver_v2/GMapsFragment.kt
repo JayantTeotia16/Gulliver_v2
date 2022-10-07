@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -30,7 +31,7 @@ class GMapsFragment : Fragment() {
          */
         val sydney = LatLng(12.9415, 77.6178)
         googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Koramangala"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 20f))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15f))
     }
 
     override fun onCreateView(
@@ -38,6 +39,7 @@ class GMapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (activity as AppCompatActivity).supportActionBar!!.hide()
         val view =  inflater.inflate(R.layout.fragment_g_maps, container, false)
         val button = view.findViewById<Button>(R.id.mapback)
         button.setOnClickListener {
