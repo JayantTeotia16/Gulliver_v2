@@ -39,7 +39,7 @@ class GMapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+
         val view =  inflater.inflate(R.layout.fragment_g_maps, container, false)
         val button = view.findViewById<Button>(R.id.mapback)
         button.setOnClickListener {
