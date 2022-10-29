@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1925" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/check.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/drawer_layout.xml" value="0.1" />

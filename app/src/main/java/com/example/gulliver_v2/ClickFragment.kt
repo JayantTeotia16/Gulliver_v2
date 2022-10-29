@@ -27,7 +27,7 @@ class ClickFragment : Fragment() {
 
 
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_clickFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_clickFragment_to_mainActivity4)
         }
 
         return view

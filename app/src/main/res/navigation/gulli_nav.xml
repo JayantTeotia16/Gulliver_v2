@@ -37,10 +37,8 @@
         android:label="fragment_click"
         tools:layout="@layout/fragment_click" >
         <action
-            android:id="@+id/action_clickFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_clickFragment_to_mainActivity4"
+            app:destination="@id/mainActivity4" />
     </fragment>
     <fragment
         android:id="@+id/GMapsFragment"
@@ -48,9 +46,11 @@
         android:label="fragment_g_maps"
         tools:layout="@layout/fragment_g_maps" >
         <action
-            android:id="@+id/action_GMapsFragment_to_homeFragment2"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_GMapsFragment_to_mainActivity4"
+            app:destination="@id/mainActivity4" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity4"
+        android:name="com.example.gulliver_v2.MainActivity"
+        android:label="MainActivity" />
 </navigation>

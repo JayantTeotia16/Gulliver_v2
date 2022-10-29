@@ -23,7 +23,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 
-            <androidx.appcompat.widget.Toolbar
+            <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -37,20 +37,50 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
                 </FrameLayout>
-                <Button
-                    android:id="@+id/check1"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/destination_search"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_baseline_notifications_24"
-                    />
-                <Button
-                    android:id="@+id/check2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_baseline_chat_bubble_24"
-                     />
+                    android:hint="GULLIVER"
+                    app:hintTextColor="@color/white"
+                    app:boxBackgroundColor="@color/purple_500"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/icon_service_question"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            </androidx.appcompat.widget.Toolbar>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cost_of_service_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoComplete"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/search1"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    android:drawableBottom="@drawable/ic_baseline_search_24"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/notification"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    android:drawableBottom="@drawable/ic_baseline_notifications_24"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/chat"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    android:drawableBottom="@drawable/ic_chat"/>
+
+            </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -59,7 +89,6 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/bottomBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

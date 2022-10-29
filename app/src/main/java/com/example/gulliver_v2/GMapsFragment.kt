@@ -43,7 +43,7 @@ class GMapsFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_g_maps, container, false)
         val button = view.findViewById<Button>(R.id.mapback)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_GMapsFragment_to_homeFragment2)
+            findNavController().navigate(R.id.action_GMapsFragment_to_mainActivity4)
         }
         return view
     }
