@@ -13,6 +13,8 @@
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.32382246376811596" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.32382246376811596" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/menu/my_navigation_items.xml" value="0.35625" />
+        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.35625" />
         <entry key="app/src/main/res/menu/top_app_bar.xml" value="0.35625" />
       </map>
     </option>
