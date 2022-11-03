@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
 
-class ClickFragment : Fragment() {
+class CartFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +22,12 @@ class ClickFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_click, container, false)
+        val view =  inflater.inflate(R.layout.fragment_cart, container, false)
         val button = view.findViewById<Button>(R.id.check1)
 
 
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_clickFragment_to_mainActivity4)
+            findNavController().navigate(R.id.action_cartFragment_to_mainActivity4)
         }
 
         return view
