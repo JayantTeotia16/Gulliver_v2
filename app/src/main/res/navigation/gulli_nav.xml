@@ -11,8 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profile_Fragment" />
         <action
             android:id="@+id/action_homeFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
@@ -21,12 +21,12 @@
             app:destination="@id/GMapsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.example.gulliver_v2.MapFragment"
-        android:label="fragment_map"
-        tools:layout="@layout/fragment_map" >
+        android:id="@+id/profile_Fragment"
+        android:name="com.example.gulliver_v2.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
         <action
-            android:id="@+id/action_mapFragment_to_homeFragment"
+            android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
