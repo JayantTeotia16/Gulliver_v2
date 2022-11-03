@@ -12,7 +12,7 @@
         android:id="@+id/ghi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Map Frag"
+        android:text="Profile Frag"
         app:layout_constraintBottom_toTopOf="@+id/check2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
