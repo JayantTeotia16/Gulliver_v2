@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gulliver_v2.R
 import com.example.tiptime.model.Affirmation
 
-class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>, private val onItemClicked: (position: Int) -> Unit): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
-    class ItemViewHolder(private val view: View, private val onItemClicked: (position: Int) -> Unit) : RecyclerView.ViewHolder(view), View.OnClickListener {
-        val textView: TextView = view.findViewById(R.id.item_title)
-        val imageView: ImageView = view.findViewById(R.id.item_image)
+class ItAdapter(private val context: Context, private val dataset: List<Affirmation>, private val onItemClicked: (position: Int) -> Unit): RecyclerView.Adapter<ItAdapter.ItemViewHolder1>() {
+    class ItemViewHolder1(private val view: View, private val onItemClicked: (position: Int) -> Unit) : RecyclerView.ViewHolder(view), View.OnClickListener {
+        val textView: TextView = view.findViewById(R.id.item_title1)
+        val imageView: ImageView = view.findViewById(R.id.item_image1)
         init {
             itemView.setOnClickListener({ _ -> onItemClicked(adapterPosition) })
         }
@@ -23,16 +23,16 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder1 {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item, parent, false)
+            .inflate(R.layout.list_item1, parent, false)
 
-        return ItemViewHolder(adapterLayout, onItemClicked)
+        return ItemViewHolder1(adapterLayout, onItemClicked)
     }
 
 
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder1, position: Int) {
         val item = dataset[position]
         holder.textView.text =  context.resources.getString(item.stringResourceId)
         holder.imageView.setImageResource(item.imageResourceId)

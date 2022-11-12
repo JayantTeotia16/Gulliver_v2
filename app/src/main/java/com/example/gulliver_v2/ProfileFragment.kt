@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
 
-class MapFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +22,12 @@ class MapFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_map, container, false)
+        val view =  inflater.inflate(R.layout.fragment_profile, container, false)
         val button = view.findViewById<Button>(R.id.check2)
 
 
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_mapFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
         }
 
         return view

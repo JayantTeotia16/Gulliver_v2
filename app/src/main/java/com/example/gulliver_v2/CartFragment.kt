@@ -9,12 +9,12 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tiptime.adapter.ItAdapter
 import com.example.tiptime.adapter.ItemAdapter
 import com.example.tiptime.data.Datasource
 
 
-class HomeFragment : Fragment() {
+class CartFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,35 +25,24 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_home, container, false)
-        val button = view.findViewById<Button>(R.id.service_button1)
-        val button1 = view.findViewById<Button>(R.id.service_button2)
+        val view =  inflater.inflate(R.layout.fragment_cart, container, false)
+        val button = view.findViewById<Button>(R.id.check1)
+
+
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+            findNavController().navigate(R.id.action_cartFragment_to_mainActivity4)
         }
-
-        button1.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_GMapsFragment)
-        }
-
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)
-        val recyclerView1 = view?.findViewById<RecyclerView>(R.id.recycler_view1)
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_cart)
         val myDataset = Datasource().loadAffirmations()
         //val position = 0
         recyclerView?.adapter = ItemAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
-        recyclerView1?.adapter = ItAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
-
-
 
         return view
     }
-
     private fun onListItemClick(position: Int) {
         val myDataset = Datasource().loadAffirmations()
         Toast.makeText(this.requireContext(), myDataset[position].stringResourceId, Toast.LENGTH_SHORT).show()
     }
-
 
 }
