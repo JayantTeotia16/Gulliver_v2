@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tiptime.adapter.ItemAdapter
+import com.example.tiptime.adapter.ItemAdapter1
 import com.example.tiptime.data.Datasource
 
 
@@ -38,9 +39,11 @@ class HomeFragment : Fragment() {
         }
 
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView1 = view?.findViewById<RecyclerView>(R.id.recycler_view1)
         val myDataset = Datasource().loadAffirmations()
         //val position = 0
         recyclerView?.adapter = ItemAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
+        recyclerView1?.adapter = ItemAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
 
 
 

@@ -1,0 +1,46 @@
+package com.example.tiptime.adapter
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.gulliver_v2.R
+import com.example.tiptime.model.Affirmation
+
+class ItemAdapter1(private val context: Context, private val dataset: List<Affirmation>, private val onItemClicked: (position: Int) -> Unit): RecyclerView.Adapter<ItemAdapter1.ItemViewHolder>() {
+    class ItemViewHolder(private val view: View, private val onItemClicked: (position: Int) -> Unit) : RecyclerView.ViewHolder(view), View.OnClickListener {
+        val textView: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView = view.findViewById(R.id.item_image)
+        init {
+            itemView.setOnClickListener({ _ -> onItemClicked(adapterPosition) })
+        }
+        override fun onClick(v: View) {
+            val position = adapterPosition
+            onItemClicked(position)
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        // create a new view
+        val context = parent.context
+        val adapterLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.list_item1, parent, false)
+
+        return ItemViewHolder(adapterLayout, onItemClicked)
+    }
+
+
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val item = dataset[position]
+        holder.textView.text =  context.resources.getString(item.stringResourceId)
+        holder.imageView.setImageResource(item.imageResourceId)
+    }
+
+
+    override fun getItemCount() = dataset.size
+
+
+}
