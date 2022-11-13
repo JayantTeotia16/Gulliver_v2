@@ -6,7 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import com.example.tiptime.adapter.CartAdapter
+import com.example.tiptime.adapter.ItemAdapter
+import com.example.tiptime.data.Datasource
 
 
 class CartFragment : Fragment() {
@@ -29,9 +34,16 @@ class CartFragment : Fragment() {
         button.setOnClickListener {
             findNavController().navigate(R.id.action_cartFragment_to_mainActivity4)
         }
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_cart)
+        val myDataset = Datasource().loadAffirmations()
+        //val position = 0
+        recyclerView?.adapter = CartAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
 
         return view
     }
-
+    private fun onListItemClick(position: Int) {
+        val myDataset = Datasource().loadAffirmations()
+        Toast.makeText(this.requireContext(), myDataset[position].stringResourceId, Toast.LENGTH_SHORT).show()
+    }
 
 }
