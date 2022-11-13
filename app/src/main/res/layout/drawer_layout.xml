@@ -27,24 +27,22 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="@color/grey"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
 
 
                 <FrameLayout
                     android:id="@+id/main_fragment"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                </FrameLayout>
+                    android:layout_height="match_parent"></FrameLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/destination_search"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:hint="GULLIVER"
-                    app:hintTextColor="@color/white"
-                    app:boxBackgroundColor="@color/purple_500"
-                    android:textColorHint="@color/white"
+                    android:textColorHint="@color/one_piece"
+                    app:hintTextColor="@color/one_piece"
                     app:layout_constraintStart_toEndOf="@+id/icon_service_question"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -52,6 +50,7 @@
                         android:id="@+id/cost_of_service_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/grey"
                         android:inputType="textAutoComplete"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -62,23 +61,34 @@
                     android:id="@+id/search1"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
+                    android:drawableBottom="@drawable/ic_baseline_search_24"
+                    android:outlineAmbientShadowColor="@color/grey"
+                    android:outlineSpotShadowColor="@color/grey"
+                    android:backgroundTint="@color/grey"
                     android:textSize="14sp"
-                    app:cornerRadius="16dp"
-                    android:drawableBottom="@drawable/ic_baseline_search_24"/>
+                    app:cornerRadius="16dp" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/notification"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
+                    android:drawableBottom="@drawable/ic_baseline_notifications_24"
+                    android:outlineAmbientShadowColor="@color/grey"
+                    android:outlineSpotShadowColor="@color/grey"
+                    android:backgroundTint="@color/grey"
                     android:textSize="14sp"
-                    app:cornerRadius="16dp"
-                    android:drawableBottom="@drawable/ic_baseline_notifications_24"/>
+                    app:cornerRadius="16dp" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/chat"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
+                    android:drawableBottom="@drawable/ic_chat"
+                    android:outlineAmbientShadowColor="@color/grey"
+                    android:outlineSpotShadowColor="@color/grey"
+                    android:backgroundTint="@color/grey"
                     android:textSize="14sp"
-                    app:cornerRadius="16dp"
-                    android:drawableBottom="@drawable/ic_chat"/>
+                    app:cornerRadius="16dp" />
 
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -109,6 +119,8 @@
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                app:backgroundTint="@color/grey"
                 app:menu="@menu/bottom_navigation_menu" />
 
         </LinearLayout>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="160dp"
-    android:layout_height="160dp"
+    android:layout_width="70dp"
+    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
+    android:outlineSpotShadowColor="@color/white"
+    android:outlineAmbientShadowColor="@color/white"
     app:cardCornerRadius="1dp">
 
     <LinearLayout
@@ -13,10 +15,11 @@
 
         <ImageView
             android:id="@+id/item_image1"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@drawable/shape1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/shape_solid_round"
             android:clipToOutline="true"
+            android:layout_gravity="center"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop" />
 
@@ -25,10 +28,10 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:textAlignment="center"
-            android:padding="5dp"
-            android:background="@drawable/shape1"
+            android:padding="3dp"
+            android:background="@drawable/shape_rounded_rect"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="16dp"/>
+            android:textSize="12dp"/>
 
     </LinearLayout>
 
