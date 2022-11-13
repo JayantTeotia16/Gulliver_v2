@@ -14,15 +14,19 @@
         <ImageView
             android:id="@+id/item_image1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="110dp"
+            android:background="@drawable/shape1"
+            android:clipToOutline="true"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/item_title1"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAlignment="center"
             android:padding="5dp"
+            android:background="@drawable/shape1"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textSize="16dp"/>
 
