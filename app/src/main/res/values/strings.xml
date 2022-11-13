@@ -31,4 +31,5 @@
     <string name="hotel">Hotel</string>
     <string name="chat">Chat</string>
     <string name="cart">Cart</string>
+    <string name="back_button">Back</string>
 </resources>
