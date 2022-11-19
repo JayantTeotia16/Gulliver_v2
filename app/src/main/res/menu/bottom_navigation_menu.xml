@@ -3,22 +3,23 @@
         <item
             android:id="@+id/page_1"
             android:enabled="true"
-            android:icon="@drawable/ic_location"
-            android:title="@string/places"/>
+            android:icon="@drawable/ic_hotel"
+            android:title="@string/home"/>
         <item
             android:id="@+id/page_2"
             android:enabled="true"
-            android:icon="@drawable/ic_vehicle"
-            android:title="@string/vehicle"/>
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="@string/explore"/>
+
         <item
             android:id="@+id/page_3"
             android:enabled="true"
-            android:icon="@drawable/ic_hotel"
-            android:title="@string/hotel"/>
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/cart"/>
         <item
             android:id="@+id/page_4"
             android:enabled="true"
-            android:icon="@drawable/ic_baseline_shopping_cart_24"
-            android:title="@string/cart"/>
+            android:icon="@drawable/ic_fav"
+            android:title="@string/profile"/>
 
 </menu>
