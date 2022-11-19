@@ -7,8 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import com.example.tiptime.adapter.ItemAdapter
+import com.example.tiptime.adapter.ItemAdapterMap
+import com.example.tiptime.data.Datasource
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -45,6 +50,10 @@ class GMapsFragment : Fragment() {
         button.setOnClickListener {
             findNavController().navigate(R.id.action_GMapsFragment_to_mainActivity4)
         }
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_map)
+        val myDataset = Datasource().loadAffirmations()
+        //val position = 0
+        recyclerView?.adapter = ItemAdapterMap(this.requireContext(), myDataset, {position -> onListItemClick(position)})
         return view
     }
 
@@ -52,5 +61,10 @@ class GMapsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+    }
+
+    private fun onListItemClick(position: Int) {
+        val myDataset = Datasource().loadAffirmations()
+        Toast.makeText(this.requireContext(), myDataset[position].stringResourceId, Toast.LENGTH_SHORT).show()
     }
 }
