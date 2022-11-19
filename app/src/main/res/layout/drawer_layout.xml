@@ -13,13 +13,13 @@
         tools:context=".MainActivity">
 
 
-
-
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/topBar"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:outlineSpotShadowColor="@color/one_piece"
+            android:outlineAmbientShadowColor="@color/one_piece"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 
@@ -31,19 +31,17 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
 
-                <FrameLayout
-                    android:id="@+id/main_fragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"></FrameLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/destination_search"
-                    android:layout_width="150dp"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:hint="GULLIVER"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    android:layout_gravity="left"
                     android:textColorHint="@color/one_piece"
                     app:hintTextColor="@color/one_piece"
-                    app:layout_constraintStart_toEndOf="@+id/icon_service_question"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -59,36 +57,40 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/search1"
-                    android:layout_width="55dp"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
-                    android:drawableBottom="@drawable/ic_baseline_search_24"
+                    app:icon="@drawable/ic_baseline_search_24"
+                    app:iconSize="25dp"
                     android:outlineAmbientShadowColor="@color/grey"
                     android:outlineSpotShadowColor="@color/grey"
                     android:backgroundTint="@color/grey"
+                    android:padding="10dp"
                     android:textSize="14sp"
-                    app:cornerRadius="16dp" />
+                    />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/notification"
-                    android:layout_width="55dp"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
-                    android:drawableBottom="@drawable/ic_baseline_notifications_24"
+                   app:icon="@drawable/ic_fav"
+                    app:iconSize="25dp"
                     android:outlineAmbientShadowColor="@color/grey"
                     android:outlineSpotShadowColor="@color/grey"
                     android:backgroundTint="@color/grey"
                     android:textSize="14sp"
-                    app:cornerRadius="16dp" />
+                    android:padding="10dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/chat"
-                    android:layout_width="55dp"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
-                    android:drawableBottom="@drawable/ic_chat"
+                   app:icon="@drawable/ic_chat"
+                    app:iconSize="25dp"
                     android:outlineAmbientShadowColor="@color/grey"
                     android:outlineSpotShadowColor="@color/grey"
                     android:backgroundTint="@color/grey"
-                    android:textSize="14sp"
-                    app:cornerRadius="16dp" />
+                    android:padding="10dp"
+                    android:textSize="14sp" />
 
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -109,7 +111,6 @@
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="bottom"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +120,12 @@
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 app:backgroundTint="@color/grey"
+                app:itemIconTint="@color/one_piece"
+                app:itemRippleColor="@color/white"
+                app:itemTextColor="@color/one_piece"
+                android:outlineSpotShadowColor="@color/one_piece"
+                android:outlineAmbientShadowColor="@color/one_piece"
                 app:menu="@menu/bottom_navigation_menu" />
 
         </LinearLayout>
