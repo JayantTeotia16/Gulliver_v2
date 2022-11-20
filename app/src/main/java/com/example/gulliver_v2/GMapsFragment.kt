@@ -48,7 +48,7 @@ class GMapsFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_g_maps, container, false)
         val button = view.findViewById<Button>(R.id.mapback)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_GMapsFragment_to_mainActivity4)
+            findNavController().navigate(R.id.action_GMapsFragment_to_homeFragment)
         }
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_map)
         val myDataset = Datasource().loadAffirmations()
