@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:id="@+id/mapback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -24,10 +16,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_map"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         android:layout_marginLeft="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"

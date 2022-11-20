@@ -86,8 +86,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.O
         val navController = findNavController(R.id.gulli_nav_frag)
         when (item.itemId) {
             R.id.nav_profile -> {
-                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-                navController.navigate(R.id.action_homeFragment_to_GMapsFragment)
+                val button = findViewById<View>(R.id.nav_profile)
+                button?.setOnClickListener {
+                    findNavController(R.id.gulli_nav_frag).navigate(R.id.profile_Fragment, null)}
             }
             R.id.nav_messages -> {
                 Toast.makeText(this, "Messages clicked", Toast.LENGTH_SHORT).show()
