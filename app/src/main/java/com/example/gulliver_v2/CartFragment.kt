@@ -31,9 +31,7 @@ class CartFragment : Fragment() {
         val button = view.findViewById<Button>(R.id.check1)
 
 
-        button.setOnClickListener {
-            findNavController().navigate(R.id.action_cartFragment_to_mainActivity4)
-        }
+
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_cart)
         val myDataset = Datasource().loadAffirmations()
         //val position = 0
