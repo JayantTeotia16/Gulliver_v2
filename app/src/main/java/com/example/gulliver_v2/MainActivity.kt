@@ -24,6 +24,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.tiptime.data.Datasource
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.OnNavigationItemSelectedListener {
@@ -51,6 +52,20 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.O
         toolbar.setupWithNavController( navController, appBarConfiguration)
 
         navView.setNavigationItemSelectedListener(this)
+
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.home_page -> {
+                    Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.cart_page -> {
+                    // Respond to navigation item 2 click
+                    true
+                }
+                else -> false
+            }
+        }
 
         }
 
@@ -90,6 +105,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.O
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav?.setupWithNavController(navController)
     }
 
 
