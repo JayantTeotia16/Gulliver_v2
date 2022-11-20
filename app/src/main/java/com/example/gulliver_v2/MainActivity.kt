@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.util.AttributeSet
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -24,13 +26,17 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.tiptime.data.Datasource
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var navController: NavController
     lateinit var toolbar: Toolbar
     private lateinit var appBarConfiguration: AppBarConfiguration
-    lateinit var drawerLayout: DrawerLayout
+    private lateinit var drawerLayout: DrawerLayout
+    lateinit var bottomNav: BottomNavigationView
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var navView: NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,12 +57,36 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.O
         toolbar.setupWithNavController( navController, appBarConfiguration)
 
         navView.setNavigationItemSelectedListener(this)
-
+        bottomNav = findViewById(R.id.bottom_navigation) as BottomNavigationView
+        bottomNav.setOnNavigationItemReselectedListener {
+            when (it.itemId) {
+                R.id.page_1 -> {
+                    loadFragment(HomeFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
+                R.id.page_2 -> {
+                    loadFragment(GMapsFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
+                R.id.page_3 -> {
+                    loadFragment(CartFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
+                R.id.page_4 -> {
+                    loadFragment(ProfileFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
+            }
         }
 
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
-        return super.onCreateView(name, context, attrs)
+
     }
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.gulli_nav_frag,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+        }
 
     private fun onListItemClick(position: Int) {
         val myDataset = Datasource().loadAffirmations()
@@ -68,11 +98,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.O
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.gulli_nav_frag)
         when (item.itemId) {
             R.id.nav_profile -> {
-                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-                navController.navigate(R.id.action_homeFragment_to_GMapsFragment)
+
             }
             R.id.nav_messages -> {
                 Toast.makeText(this, "Messages clicked", Toast.LENGTH_SHORT).show()
@@ -91,6 +119,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationView.O
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
 
 
 }
