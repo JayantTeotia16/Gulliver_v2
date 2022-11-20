@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tiptime.adapter.CartAdapter
 import com.example.tiptime.adapter.ItemAdapter
 import com.example.tiptime.data.Datasource
 
@@ -36,7 +37,7 @@ class CartFragment : Fragment() {
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_cart)
         val myDataset = Datasource().loadAffirmations()
         //val position = 0
-        recyclerView?.adapter = ItemAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
+        recyclerView?.adapter = CartAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
 
         return view
     }

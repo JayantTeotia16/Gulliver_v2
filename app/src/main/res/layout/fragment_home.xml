@@ -13,126 +13,232 @@
         tools:context=".MainActivity">
 
 
-
-        <!--
-        <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        tools:ignore="MissingConstraints">
-
-          <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigation"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="60dp"
-            app:menu="@menu/my_navigation_items" />
-    </androidx.drawerlayout.widget.DrawerLayout>
-
-        Your contents -->
-
-
-
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/destination_search"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="70dp"
-            android:hint="@string/search_hint"
-            app:layout_constraintStart_toEndOf="@+id/icon_service_question"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:outlineSpotShadowColor="@color/one_piece"
+            android:textColorHint="@color/one_piece"
+            app:boxBackgroundColor="@color/grey"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/one_piece"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:hintTextColor="@color/one_piece"
+            android:layout_marginLeft="30dp"
+            android:padding="0dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/cost_of_service_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:padding="12dp"
+                android:textColor="@color/one_piece"
                 android:inputType="textAutoComplete" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <ImageView
-            android:id="@+id/icon_service_question"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-
-            android:importantForAccessibility="no"
-            app:layout_constraintBottom_toBottomOf="@+id/destination_search"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/destination_search"
-            app:srcCompat="@drawable/ic_round_up" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/search1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+           android:backgroundTint="@color/grey"
             android:layout_marginStart="10dp"
             android:text="@string/search"
-            android:textSize="12sp"
-            app:cornerRadius="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/one_piece"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/one_piece"
+            app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/destination_search"
             app:layout_constraintStart_toEndOf="@+id/destination_search"
             app:layout_constraintTop_toTopOf="@+id/destination_search" />
 
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/destination_search"
-            tools:context=".MainActivity">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:scrollbars="horizontal"
-                app:layoutManager="LinearLayoutManager" />
-        </FrameLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/create_trip_button"
+            android:layout_width="75dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="0dp"
+            android:text="@string/create_trip"
+            android:textSize="12sp"
+            android:textColor="@color/one_piece"
+            app:icon="@drawable/create_trip_ic"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            app:iconSize="35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/destination_search" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/join_trip_button"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="0dp"
+            android:text="@string/join_trip"
+            android:textSize="12sp"
+            app:icon="@drawable/join_trip_ic"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            app:iconSize="35dp"
+            app:layout_constraintStart_toEndOf="@id/create_trip_button"
+            app:layout_constraintTop_toBottomOf="@+id/destination_search" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/events_button"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="0dp"
+            android:text="@string/events"
+            android:textSize="12sp"
+            app:icon="@drawable/events_ic"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            app:iconSize="35dp"
+            app:layout_constraintStart_toEndOf="@id/join_trip_button"
+            app:layout_constraintTop_toBottomOf="@+id/destination_search" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/hotel_button"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="0dp"
+            android:text="@string/hotel"
+            android:textSize="12sp"
+            app:icon="@drawable/hotel_ic"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            app:iconSize="35dp"
+            app:layout_constraintStart_toEndOf="@id/events_button"
+            app:layout_constraintTop_toBottomOf="@+id/destination_search" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/vehicle_button"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="0dp"
+            android:text="@string/vehicle"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_vehicle"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            app:iconSize="35dp"
+            app:layout_constraintStart_toEndOf="@id/hotel_button"
+            app:layout_constraintTop_toBottomOf="@+id/destination_search" />
+
+
+        <TextView
+            android:id="@+id/place_text"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/create_trip_button"
+            android:layout_marginStart="15dp"
+            android:text="Plan a Trip"
+            android:textStyle="bold"
+            android:textColor="@color/one_piece"
+            android:textSize="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/place_text" />
+
+
+
+        <TextView
+            android:id="@+id/State_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view"
+            android:layout_marginStart="15dp"
+            android:text="State Tourism"
+            android:textStyle="bold"
+            android:textColor="@color/one_piece"
+            android:textSize="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/State_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"/>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/service_button1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/service1"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
+            android:layout_marginTop="10dp"
+            android:outlineSpotShadowColor="@color/white"
+            android:outlineAmbientShadowColor="@color/white"
+            android:text="To Cart"
+            android:textSize="11dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/service_button2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="@string/service2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:text="To Maps"
+            android:textAllCaps="false"
             android:textSize="12sp"
             app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/service_button1"
-            app:layout_constraintStart_toEndOf="@+id/service_button1"
-            />
+            app:layout_constraintStart_toEndOf="@+id/service_button1" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/service_button3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="@string/service3"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/service_button2"
-            app:layout_constraintStart_toEndOf="@+id/service_button2"
-            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

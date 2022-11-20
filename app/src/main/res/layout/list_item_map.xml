@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="160dp"
+    android:layout_height="180dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:outlineSpotShadowColor="@color/white"
     android:outlineAmbientShadowColor="@color/white"
-    android:layout_margin="8dp"
+    android:layout_margin="15dp"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
@@ -14,24 +14,24 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/item_image"
-            android:layout_width="140dp"
-            android:layout_height="130dp"
+            android:id="@+id/item_image_map"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:background="@drawable/shape_rounded_rect"
-            android:importantForAccessibility="no"
             android:clipToOutline="true"
+            android:importantForAccessibility="no"
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/item_title"
+            android:id="@+id/item_title_map"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:padding="5dp"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="12dp"
-            android:textColor="@color/one_piece"/>
+            android:textColor="@color/one_piece"
+            android:textSize="12dp" />
 
     </LinearLayout>
 
