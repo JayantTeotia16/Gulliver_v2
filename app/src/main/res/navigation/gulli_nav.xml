@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/profile_Fragment"
         android:name="com.example.gulliver_v2.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/cartFragment"
@@ -40,7 +40,7 @@
     <fragment
         android:id="@+id/GMapsFragment"
         android:name="com.example.gulliver_v2.GMapsFragment"
-        android:label="fragment_g_maps"
+        android:label="Explore"
         tools:layout="@layout/fragment_g_maps" >
         <action
             android:id="@+id/action_GMapsFragment_to_itineraryFragment"
@@ -52,17 +52,17 @@
     <fragment
         android:id="@+id/overviewFragment"
         android:name="com.example.gulliver_v2.OverviewFragment"
-        android:label="fragment_overview"
+        android:label="Overview"
         tools:layout="@layout/fragment_overview" />
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.gulliver_v2.ChatFragment"
-        android:label="fragment_chat"
+        android:label="Chat"
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/itineraryFragment"
         android:name="com.example.gulliver_v2.ItineraryFragment"
-        android:label="fragment_itinerary"
+        android:label="Itinerary View"
         tools:layout="@layout/fragment_itinerary" >
         <action
             android:id="@+id/action_itineraryFragment_to_overviewFragment"

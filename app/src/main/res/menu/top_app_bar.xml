@@ -2,14 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/favorite"
-        android:icon="@drawable/ic_fav"
+        android:id="@+id/notifications"
+        android:icon="@drawable/ic_notif"
+        android:iconTint="@color/one_piece"
         app:showAsAction="ifRoom"
-        android:title="@string/fav" />
+        android:title="@string/notifications" />
     <item
-        android:id="@+id/more1"
-        android:title="@string/profile"
-        app:showAsAction="ifRoom"
-         />
+        android:id="@+id/chats"
+        android:icon="@drawable/ic_chat"
+        android:iconTint="@color/one_piece"
+        android:title="@string/chat"
+        app:showAsAction="ifRoom" />
 
 </menu>
