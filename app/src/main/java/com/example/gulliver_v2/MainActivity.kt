@@ -27,7 +27,7 @@ import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,  NavigationBarView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     lateinit var toolbar: Toolbar
@@ -49,22 +49,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         navController = navHostFragment.navController
 
-        //findViewById<Toolbar>(R.id.topBar)
-        //    .setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration.Builder(navController.graph).setOpenableLayout(drawerLayout).build()
         toolbar.setupWithNavController( navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
 
-        navView.setNavigationItemSelectedListener(this)
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.home_page -> replaceFragment(HomeFragment())
-                R.id.cart_page -> replaceFragment(CartFragment())
-                R.id.explore_page -> replaceFragment(GMapsFragment())
-                R.id.profile_page -> replaceFragment(ProfileFragment())
-                else -> false
-            }
-            true
-        }
+        val botNavView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        botNavView.setupWithNavController(navController)
 
     }
 
@@ -79,28 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navController = findNavController(R.id.gulli_nav_frag)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.gulli_nav_frag)
-        when (item.itemId) {
-            R.id.nav_profile -> {
-                replaceFragment(ProfileFragment())
-            }
-            R.id.nav_messages -> {
 
-                            }
-            R.id.nav_friends -> {
-                Toast.makeText(this, "Friends clicked", Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_update -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_logout -> {
-                Toast.makeText(this, "Sign out clicked", Toast.LENGTH_SHORT).show()
-            }
-        }
-        drawerLayout.closeDrawer(GravityCompat.START)
-        return true
-    }
 
     private fun replaceFragment(fragment : Fragment){
 
