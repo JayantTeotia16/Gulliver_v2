@@ -43,17 +43,8 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_home, container, false)
 
-        val button = view.findViewById<Button>(R.id.service_button1)
-        val button1 = view.findViewById<Button>(R.id.service_button2)
-        val button2 = view.findViewById<Button>(R.id.create_trip_button)
+        val button = view.findViewById<Button>(R.id.create_trip_button)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
-        }
-
-        button1.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_GMapsFragment)
-        }
-        button2.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_chatFragment)
         }
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)
