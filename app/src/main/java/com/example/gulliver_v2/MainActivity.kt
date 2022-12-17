@@ -3,9 +3,12 @@ package com.example.gulliver_v2
 import android.content.Context
 import android.os.Bundle
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
+import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.gulli_nav_frag) as NavHostFragment
 
+
         drawerLayout = findViewById(R.id.drawer_layout)
         navView = findViewById(R.id.nav_view)
         toolbar = findViewById(R.id.toolbar)
@@ -56,31 +60,41 @@ class MainActivity : AppCompatActivity() {
         val botNavView: BottomNavigationView = findViewById(R.id.bottom_navigation)
         botNavView.setupWithNavController(navController)
 
-    }
+        //val but = findViewById<>(R.id.chats)
+        val popupViewNotif = layoutInflater.inflate(R.layout.join_trip_popup, null)
+        val popupWindowNotif = PopupWindow(popupViewNotif, 300, 700)
+        popupWindowNotif.isOutsideTouchable = true;
 
+        popupWindowNotif.contentView.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                // Dismiss the popup window
+                popupWindowNotif.dismiss()
+            }
+            true
+        }
 
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.notifications -> {
+                    // Handle favorite icon press
+                    popupWindowNotif.showAtLocation(binding.root, Gravity.RIGHT, 0, 0)
+                    true
+                }
+                R.id.chats -> {
+                    // Handle search icon press
+                    true
+                }
 
-    private fun onListItemClick(position: Int) {
-        val myDataset = Datasource().loadAffirmations()
-        Toast.makeText(this, myDataset[position].stringResourceId, Toast.LENGTH_SHORT).show()
-    }
+                else -> false
+            }
+        }
+
+        }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.gulli_nav_frag)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-
-    private fun replaceFragment(fragment : Fragment){
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.gulli_nav_frag,fragment)
-        fragmentTransaction.commit()
-
-
-    }
-
 }
 
 

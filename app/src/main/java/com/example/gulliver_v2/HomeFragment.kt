@@ -1,12 +1,12 @@
 package com.example.gulliver_v2
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
+import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
@@ -28,6 +28,7 @@ class HomeFragment : Fragment() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var navView: NavigationView
     lateinit var toolbar: Toolbar
+    private lateinit var popupWindow: PopupWindow
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class HomeFragment : Fragment() {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,7 +56,41 @@ class HomeFragment : Fragment() {
         recyclerView?.adapter = ItemAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
         recyclerView1?.adapter = ItAdapter(this.requireContext(), myDataset, {position -> onListItemClick(position)})
 
+        val popupViewJoinTrip = layoutInflater.inflate(R.layout.join_trip_popup, null)
+        val popupWindowJoinTrip = PopupWindow(popupViewJoinTrip, 300, 700)
+        val popButtonJoinTrip = view.findViewById<Button>(R.id.join_trip_button)
+        popupWindowJoinTrip.isOutsideTouchable = true;
+        popButtonJoinTrip.setOnClickListener {
+            // Show the popup window
+            popupWindowJoinTrip.showAtLocation(view, Gravity.CENTER, 0, 0)
+        }
+        popupWindowJoinTrip.contentView.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                // Dismiss the popup window
+                popupWindowJoinTrip.dismiss()
+                Log.d("DEBUG", "This is a debug message")
 
+            }
+            Log.d("DEBUG", "This is a d message")
+
+            true
+        }
+
+        val popupViewCreateTrip = layoutInflater.inflate(R.layout.join_trip_popup, null)
+        val popupWindowCreateTrip = PopupWindow(popupViewCreateTrip, 300, 700)
+        val popButtonCreateTrip = view.findViewById<Button>(R.id.create_trip_button)
+        popupWindowCreateTrip.isOutsideTouchable = true;
+        popButtonCreateTrip.setOnClickListener {
+            // Show the popup window
+            popupWindowCreateTrip.showAtLocation(view, Gravity.CENTER, 0, 0)
+        }
+        popupWindowCreateTrip.contentView.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                // Dismiss the popup window
+                popupWindowCreateTrip.dismiss()
+            }
+            true
+        }
 
         return view
     }
