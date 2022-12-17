@@ -28,10 +28,6 @@ class CartFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_cart, container, false)
-        val button = view.findViewById<Button>(R.id.check1)
-
-
-
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_cart)
         val myDataset = Datasource().loadAffirmations()
         //val position = 0
