@@ -3,29 +3,30 @@
 
     <group>
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_launcher_background"
+            android:id="@+id/profile_Fragment"
+            android:icon="@drawable/ic_person"
             android:title="Profile"/>
         <item
-            android:id="@+id/nav_messages"
-            android:icon="@drawable/ic_launcher_background"
+            android:id="@+id/chatFragment"
+            android:icon="@drawable/ic_chat"
             android:title="Messages"/>
         <item
             android:id="@+id/nav_friends"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/join_trip_ic"
             android:title="Friends"/>
     </group>
 
 
-    <item android:title="Account Settings">
+    <item android:title="Account Settings"
+        android:icon="@drawable/ic_settings">
         <menu>
             <item
                 android:id="@+id/nav_update"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/ic_edit"
                 android:title="Update Profile"/>
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/ic_logout"
                 android:title="Sign Out"/>
         </menu>
     </item>

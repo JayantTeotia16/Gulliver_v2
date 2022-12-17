@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-            android:id="@+id/page_1"
+            android:id="@+id/homeFragment"
             android:enabled="true"
-            android:icon="@drawable/ic_hotel"
+            android:icon="@drawable/ic_home"
             android:title="@string/home"/>
         <item
-            android:id="@+id/page_2"
+            android:id="@+id/GMapsFragment"
             android:enabled="true"
-            android:icon="@drawable/ic_baseline_search_24"
+            android:icon="@drawable/ic_explore"
             android:title="@string/explore"/>
 
         <item
-            android:id="@+id/page_3"
+            android:id="@+id/cartFragment"
             android:enabled="true"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
             android:title="@string/cart"/>
         <item
-            android:id="@+id/page_4"
+            android:id="@+id/profile_Fragment"
             android:enabled="true"
-            android:icon="@drawable/ic_fav"
+            android:icon="@drawable/ic_person"
             android:title="@string/profile"/>
 
 </menu>
