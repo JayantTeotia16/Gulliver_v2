@@ -26,9 +26,7 @@ class ProfileFragment : Fragment() {
         val button = view.findViewById<Button>(R.id.check2)
 
 
-        button.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
-        }
+
 
         return view
     }
